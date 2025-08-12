@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <meta property="og:image" content="https://grcodeclub.github.io/file/background/5.png"/>
+        <meta property="og:title" content="JavaScript - Εντολές για Styling">
+        <script src="https://grcodeclub.github.io/js/jquery.js"></script>
+        <script src="https://grcodeclub.github.io/web/js/menu.js"></script>
+        <script src="https://grcodeclub.github.io/js/prism.js"></script>
+        <script src="https://grcodeclub.github.io/js/add/head.js"></script>
+    </head>
+
+    <body class="website">
+        <div class="container">
+            <div id="add_headder_and_menu"></div><script src="https://grcodeclub.gr/js/add/headder_and_menu.js"></script>
+
+            <div class="Text"> <!--Αρχή Κειμένου-->
+                <a href="https://grcodeclub.gr/javascript"><img class="logo_back"></a> <script src="https://grcodeclub.github.io/js/add/logo-back.js"></script>
+                <div class="text_bg"> <!-- Αρχή Background Κειμένου-->
+                    <h1 class="title">Εντολές για Styling</h1>
+
+                    <h3 class="highlight_black">Αλλαγή Χρώματος</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('text').style.color = 'blue'; //Αλλαγή Χρώματος Κειμένου
+document.getElementById('box').style.backgroundColor = 'green'; //Αλλαγή Χρώματος Φόντου</code></pre></div></div>
+
+
+                    <h3 class="highlight_black">Αλλαγή Μεγέθους Γραμματοσειράς</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('text').style.fontSize = '24px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Προσθήκη Περιγράμματος</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.border = '2px solid black';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Αλλαγή Ύψους και Πλάτους</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.width = '200px';
+document.getElementById('box').style.height = '150px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Κεντρική Στοίχιση Κειμένου</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('text').style.textAlign = 'center';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Σκιάς Κειμένου</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('text').style.textShadow = '2px 2px 4px &#35;000000';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Στρογγυλοποίηση Γωνιών</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.borderRadius = '15px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εμφάνιση και Απόκρυψη Στοιχείου</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">// Για να κρύψετε το στοιχείο
+document.getElementById('box').style.display = 'none';
+// Για να εμφανίσετε το στοιχείο
+document.getElementById('box').style.display = 'block';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Αλλαγή Πάχους Γραμμής (Line Height)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('text').style.lineHeight = '1.5';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Αλλαγή Σκηνής (Opacity)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.opacity = '0.5'; // Απόλυτη διαφάνεια 50%</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Ριμπαριστού Χρώματος (Gradient Background)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.background = 'linear-gradient(to right, red, yellow)';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Εφέ Hover (Με JavaScript)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').addEventListener('mouseover', function() {
+    this.style.transform = 'scale(1.1)'; // Μεγέθυνση στο hover
+});
+document.getElementById('box').addEventListener('mouseout', function() {
+    this.style.transform = 'scale(1)'; // Επαναφορά στο κανονικό μέγεθος
+});</code></pre></div></div>
+
+                    <h3 class="highlight_black">Αλλαγή Εφαρμογής Σκιάς Κουτιού (Box Shadow)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.boxShadow = '5px 5px 10px &#35;000000';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Ρύθμιση Χώρου Εσωτερικά (Padding)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.padding = '20px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Ρύθμιση Χώρου Εξωτερικά (Margin)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.margin = '15px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Εφέ Περικοπής (Clip Path)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.clipPath = 'circle(50%)'; // Κυκλική περικοπή</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Εφέ Σκηνής (Filter)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('image').style.filter = 'grayscale(100%)'; // Σκοτεινία της εικόνας</code></pre></div></div>
+
+                    <h3 class="highlight_black">Ρύθμιση Εύρους Περιγράμματος (Border Width)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.borderWidth = '5px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Αλλαγή Στυλ Περιγράμματος (Border Style)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.borderStyle = 'dashed'; // Διακεκομμένο περίγραμμα</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Εφέ Κίνησης (Transform)</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.transform = 'rotate(45deg)'; // Περιστροφή 45 μοίρες</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Σκηνής με CSS Variables</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.documentElement.style.setProperty('--main-bg-color', 'lightblue');</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Κινητικών Εφέ με CSS Animations</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">// Ορίστε μια animation μέσω CSS πρώτα
+// @keyframes example { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } }
+// .animated { animation: example 2s ease-in-out; }
+document.getElementById('box').classList.add('animated');</code></pre></div></div>
+
+                    <h3 class="highlight_black">Δημιουργία Εφέ Υποβάθρου με Multiple Backgrounds</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.background = 'url(image.jpg), linear-gradient(to right, red, blue)';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή 3D Transformation</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.transform = 'rotateX(30deg) rotateY(45deg)';
+document.getElementById('box').style.transformStyle = 'preserve-3d'; // Απαιτείται για 3D μετασχηματισμούς</code></pre></div></div>
+
+                    <h3 class="highlight_black">Δημιουργία Εφέ CSS Clip Path με Πολύγωνα</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.clipPath = 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Διαχείριση Διαφορετικών Media Queries με JavaScript</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">if (window.matchMedia('(min-width: 600px)').matches) {
+    document.getElementById('box').style.backgroundColor = 'lightgreen';
+} else {
+    document.getElementById('box').style.backgroundColor = 'lightcoral';
+}</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Εφέ CSS Transitions</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.transition = 'background-color 0.5s ease';
+document.getElementById('box').onmouseover = function() {
+    this.style.backgroundColor = 'orange';
+};
+document.getElementById('box').onmouseout = function() {
+    this.style.backgroundColor = 'lightblue';
+};</code></pre></div></div>
+
+                    <h3 class="highlight_black">Ρύθμιση Grid Layout Properties</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">const container = document.getElementById('grid-container');
+container.style.display = 'grid';
+container.style.gridTemplateColumns = 'repeat(3, 1fr)';
+container.style.gridGap = '10px';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Δημιουργία Κινητικών Εφέ με CSS Transforms</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.transform = 'scale(1.5) translateX(50px)';
+document.getElementById('box').style.transition = 'transform 0.3s ease';</code></pre></div></div>
+
+                    <h3 class="highlight_black">Εφαρμογή Custom Scrollbars</h3>
+                    <div class="bg_preview"><div  class="line-numbers"><pre class="code_editor"><code class="language-javascript">document.getElementById('box').style.overflow = 'auto';
+document.getElementById('box').style.scrollbarWidth = 'thin'; // Εφαρμογή λεπτών scrollbars (Firefox)</code></pre></div></div>
+
+        
+                  </div><!-- Τέλος Background Κειμένου-->
+            </div> <!--Τέλος Κειμένου-->
+
+        </div> <!--Τέλος container-->
+        
+        <!-- Footer -->
+        <footer id="add-social"></footer><script src="https://grcodeclub.gr/js/add/social.js"></script>
+    </body>
+</html>

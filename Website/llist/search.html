@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αναζήτηση Ονομάτων</title>
+    <style>
+        .list {margin-top: 20px;}
+        .list li {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 3px 0;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Αναζήτηση Ονομάτων</h1>
+    <input type="text" id="searchInputList" placeholder="Αναζήτηση ονόματος...">
+
+    <div class="list">
+        <ul>
+            <li>Γιώργος</li>
+            <li>Μαρία</li>
+            <li>Νίκος</li>
+            <li>Ελένη</li>
+            <li>Αντώνης</li>
+            <li>Σοφία</li>
+            <li>Δημήτρης</li>
+            <li>Κατερίνα</li>
+            <li>Κώστας</li>
+            <li>Ιωάννα</li>
+        </ul>
+    </div>
+    <script>
+        const searchInput = document.getElementById("searchInputList");
+        const lists = document.querySelectorAll(".list");
+        searchInput.addEventListener("input", function() {
+            const searchValue = removeAccents(searchInput.value.toLowerCase());
+            lists.forEach(function(list) {
+                Array.from(list.getElementsByTagName("li")).forEach(function(item) {
+                    const itemText = removeAccents(item.textContent.toLowerCase());
+                    if (itemText.includes(searchValue)) {item.style.display = "block";}  // Εμφάνιση στοιχείου
+                    else {item.style.display = "none";} // Απόκρυψη στοιχείου
+                });
+            });
+        });
+        function removeAccents(text) {
+            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+    </script>
+</body>
+</html>

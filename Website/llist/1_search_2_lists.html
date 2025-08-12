@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <meta charset="UTF-8">
+        <title>Αναζήτηση Σχολείων</title>
+        <style>
+            .list, .list1 {margin-top: 20px;}
+            .list li, .list1 li {
+                padding: 5px;
+                border: 1px solid #ccc;
+                margin: 3px 0;
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Αναζήτηση Σχολείων</h1>
+        <input type="text" id="searchInputList" placeholder="Αναζήτηση σε όλες τις λίστες...">
+        <h2>Γλώσσες Προγραμματισμού Παλιότερες</h2>
+        <div class="list">
+            <ul>
+                <li>Fortran</li>
+                <li>LISP</li>
+                <li>BASIC</li>
+            </ul>
+        </div>
+        <h2>Γλώσσες Προγραμματισμού Νεότερες</h2>
+        <div class="list1">
+            <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Kotlin</li>
+            </ul>
+        </div>
+        <script>
+            // Συνάρτηση για την αφαίρεση τόνων
+            function removeAccents(text) {return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");}
+            // Ενιαία λειτουργία αναζήτησης για όλες τις λίστες
+            const searchInput = document.getElementById("searchInputList");
+            const lists = document.querySelectorAll(".list, .list1");
+            searchInput.addEventListener("input", function() {
+                const searchValue = removeAccents(searchInput.value.toLowerCase());
+                lists.forEach(function(list) {
+                    Array.from(list.getElementsByTagName("li")).forEach(function(item) {
+                        const itemText = removeAccents(item.textContent.toLowerCase());
+                        if (itemText.includes(searchValue)) {item.style.display = "block";} // Εμφάνιση στοιχείου
+                        else {item.style.display = "none";} // Απόκρυψη στοιχείου
+                    });
+                 });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <meta charset="UTF-8">
+        <title>Card Toggle Example</title>
+        <style>
+            .card {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin: 10px 0;
+                padding: 10px;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .card-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .showCardButton {
+                cursor: pointer;
+                padding: 5px 10px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+            .showCardButton:hover {background-color: #0056b3;}
+        </style>
+    </head>
+    <body>
+        <h1>Παράδειγμα Εναλλαγής Περιεχομένου</h1>
+        <div class="card">
+            <button class="showCardButton">Δείξε / Κρύψε Περιεχόμενο 1</button>
+            <div class="card-content">
+                <p>Αυτό είναι το περιεχόμενο της πρώτης κάρτας. Είναι κρυφό από προεπιλογή και εμφανίζεται όταν κάνετε κλικ στο κουμπί.</p>
+            </div>
+        </div>
+        <div class="card">
+            <button class="showCardButton">Δείξε / Κρύψε Περιεχόμενο 2</button>
+            <div class="card-content">
+                <p>Αυτό είναι το περιεχόμενο της δεύτερης κάρτας. Μπορείτε να το εμφανίσετε ή να το αποκρύψετε κάνοντας κλικ στο κουμπί.</p>
+            </div>
+        </div>
+        <div class="card">
+            <button class="showCardButton">Δείξε / Κρύψε Περιεχόμενο 3</button>
+            <div class="card-content">
+                <p>Αυτό είναι το περιεχόμενο της τρίτης κάρτας. Κάντε κλικ στο κουμπί για να το δείτε ή να το κρύψετε.</p>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const buttons = document.querySelectorAll('.showCardButton'); // Όλα τα κουμπιά με την κλάση `showCardButton`
+                // Προσθέστε έναν χειριστή κλικ σε κάθε κουμπί
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        // Βρείτε το κοντινό `card-content` στοιχείο του κουμπιού
+                        const cardContent = button.nextElementSibling;
+                        // Ελέγξτε την τρέχουσα τιμή του `max-height` στο `card-content`
+                        if (cardContent.style.maxHeight === '0px' || cardContent.style.maxHeight === '') {
+                            // Εμφανίστε το περιεχόμενο του `card-content` ορίζοντας το `max-height` στο ύψος του περιεχομένου
+                            cardContent.style.maxHeight = cardContent.scrollHeight + 'px';
+                        } else {cardContent.style.maxHeight = '0';} // Απόκρυψη του περιεχομένου του `card-content` ορίζοντας το `max-height` σε `0`
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

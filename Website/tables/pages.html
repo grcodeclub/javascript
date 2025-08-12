@@ -1,0 +1,76 @@
+<html>
+    <head></head>
+    <body>
+        <h1 class="title">Αριθμός</h1>
+        <table id="table">
+            <tr id="title-table"><td>Αριθμός</td> <td>Ολογράφως</td></tr>
+            <tr><td>1</td> <td>Ένα</td></tr>
+            <tr><td>2</td> <td>Δύο</td></tr>
+            <tr><td>3</td> <td>Τρία</td></tr>
+            <tr><td>4</td> <td>Τέσσερα</td></tr>
+            <tr><td>5</td> <td>Πέντε</td></tr>
+            <tr><td>6</td> <td>Έξι</td></tr>
+            <tr><td>7</td> <td>Επτά</td></tr>
+            <tr><td>8</td> <td>Οκτώ</td></tr>
+            <tr><td>9</td> <td>Εννέα</td></tr>
+            <tr><td>10</td> <td>Δέκα</td></tr>
+        </table>    
+        <div class="pagination" id="pagination"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const itemsPerPage = 5; // Αριθμός γραμμων ανα σελιδα
+            let currentPage = 1;
+            const table1 = document.getElementById('table');
+            const rows1 = table1.querySelectorAll('tr');
+            const headerRow = table1.querySelector('#title-table');
+            function displayTable(page) {
+                const start = (page - 1) * itemsPerPage + 1; // +1 για να παραλείψουμε την επικεφαλίδα
+                const end = start + itemsPerPage;
+                const tableBody = document.querySelector('#table tbody');
+                tableBody.innerHTML = '';
+                // Προσθήκη της επικεφαλίδας
+                if (headerRow) {tableBody.appendChild(headerRow.cloneNode(true));} // Χρησιμοποιούμε cloneNode για να κρατήσουμε την αρχική επικεφαλίδα
+                // Σελιδοποίηση των γραμμών, παραλείποντας την επικεφαλίδα
+                const paginatedItems = Array.from(rows1).slice(start, end);
+                paginatedItems.forEach(row => {tableBody.appendChild(row.cloneNode(true));}); // Χρησιμοποιούμε cloneNode για να αντιγράψουμε τη γραμμή
+                applyRowColors(); // Εφαρμογή χρωματισμού μετά την απόδοση του πίνακα
+                displayPagination();
+            }
+            function displayPagination() {
+                const pagination = document.getElementById('pagination');
+                pagination.innerHTML = '';
+                const totalPages = Math.ceil((rows1.length - 1) / itemsPerPage); // Προσαρμογή για την επικεφαλίδα
+                const maxPagesToShow = 5;
+                let startPage = currentPage - 2;
+                let endPage = currentPage + 2;
+                if (startPage < 1) {
+                    startPage = 1;
+                    endPage = Math.min(totalPages, maxPagesToShow);
+                }
+                if (endPage > totalPages) {
+                    endPage = totalPages;
+                    startPage = Math.max(1, endPage - maxPagesToShow + 1);
+                }
+                for (let i = startPage; i <= endPage; i++) {
+                    const button = document.createElement('button');
+                    button.textContent = i;
+                    if (i === currentPage) {button.disabled = true;}
+                    button.addEventListener('click', () => {
+                        currentPage = i;
+                        displayTable(currentPage);
+                    });
+                    pagination.appendChild(button);
+                }
+            }
+            function applyRowColors() {
+                const tableRows = document.querySelectorAll('#table tbody tr:not(#title-table)'); // Επιλογή όλων των γραμμών εκτός από την επικεφαλίδα
+                tableRows.forEach((row, index) => {
+                    if (index % 2 === 0) {row.style.backgroundColor = 'rgba(211, 211, 211, 0.211)';} // Χρώμα σε ανοιχτό γκρι για τις ζυγές γραμμές
+                });
+            }
+            // Αρχική εμφάνιση πίνακα
+            displayTable(currentPage);
+        });
+        </script>
+    </body>
+</html>
